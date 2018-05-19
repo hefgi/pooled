@@ -1,0 +1,19 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": ["node_modules"]
+		}
+	],
+	"SublimeLinter":
+    {
+       	"linters": {
+      		"eslint": {
+        		"disable": false,
+        		"args": [],
+        		"excludes": []
+        	}
+      	}
+    }
+}

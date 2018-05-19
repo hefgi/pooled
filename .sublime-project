@@ -1,19 +1,31 @@
 {
+	"SublimeLinter":
+	{
+		"linters":
+		{
+			"eslint":
+			{
+				"args":
+				[
+				],
+				"disable": false,
+				"excludes":
+				[
+				]
+			}
+		}
+	},
 	"folders":
 	[
 		{
-			"path": ".",
-			"folder_exclude_patterns": ["node_modules"]
+			"folder_exclude_patterns":
+			[
+				"node_modules"
+			],
+			"path": "."
+		},
+		{
+			"path": "/Users/fjalcaraz/Desktop/WaverLabs/ExpressQuiz"
 		}
-	],
-	"SublimeLinter":
-    {
-       	"linters": {
-      		"eslint": {
-        		"disable": false,
-        		"args": [],
-        		"excludes": []
-        	}
-      	}
-    }
+	]
 }

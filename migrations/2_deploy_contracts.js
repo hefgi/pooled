@@ -1,7 +1,9 @@
-var ConvertLib = artifacts.require("./ConvertLib.sol");
-var MetaCoin = artifacts.require("./MetaCoin.sol");
+/* eslint-disable */
+const ConvertLib = artifacts.require('./ConvertLib.sol');
+const MetaCoin = artifacts.require('./MetaCoin.sol');
+/* eslint-enable */
 
-module.exports = function(deployer) {
+module.exports = (deployer) => {
   deployer.deploy(ConvertLib);
   deployer.link(ConvertLib, MetaCoin);
   deployer.deploy(MetaCoin);

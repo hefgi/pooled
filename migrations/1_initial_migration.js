@@ -1,5 +1,7 @@
-var Migrations = artifacts.require("./Migrations.sol");
+/* eslint-disable */
+var Migrations = artifacts.require('./Migrations.sol'); 
+/* eslint-enable */
 
-module.exports = function(deployer) {
+module.exports = (deployer) => {
   deployer.deploy(Migrations);
 };

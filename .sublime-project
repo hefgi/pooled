@@ -25,7 +25,19 @@
 			"path": "."
 		},
 		{
+			"path": "node_modules/openzeppelin-solidity"
+		},
+		{
 			"path": "/Users/fjalcaraz/Desktop/WaverLabs/ExpressQuiz"
+		},
+		{
+			"path": "../../truffle-express"
+		},
+		{
+			"path": "../../tutorial-token"
+		},
+		{
+			"path": "../../crowdsale-web-wallet-activity"
 		}
 	]
 }

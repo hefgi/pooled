@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Our awesome polls</h1>
+  <div class="row">
+    {{#polls}}
+    <div class="col-xs-12">
+      <div class="card" style="margin-bottom: 20px;">
+        <img class="card-img-top" src="http://via.placeholder.com/1400x150" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{author}}</p>
+          <a href="/polls/{{id}}" class="btn btn-primary">Start course</a>
+        </div>
+      </div>
+    </div>
+    {{/polls}}
+    <a href="/pools/new" class="btn btn-success">Create a new course</a>
+  </div>
+</div>

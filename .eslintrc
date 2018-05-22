@@ -2,6 +2,7 @@
 	"extends": "airbnb-base",
 	"env": {
 		"browser": true,
-		"jquery": true
+		"jquery": true,
+		"mocha": true,
 	}
 }

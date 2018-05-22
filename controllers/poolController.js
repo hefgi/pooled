@@ -24,7 +24,7 @@ module.exports = {
     });
   },
   poolList: (req, res, next) => {
-    const account = req.body.account;
+    const { account } = req.body.account;
 
     Pools.setProvider(web3.currentProvider);
     let poolsInstance;

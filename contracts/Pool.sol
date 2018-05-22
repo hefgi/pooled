@@ -7,9 +7,11 @@ contract Pool is Ownable {
 	string public author;
   	uint256 public deployed_time;
 
-	function Pool(string _name, string _author) public Ownable() {
+	function Pool(string _name, string _author) public {
 		name = _name;
 		author = _author;
 		deployed_time = now;
+		//https://dappsforbeginners.wordpress.com/tutorials/interactions-between-contracts/
+		owner = tx.origin;
 	}
 }

@@ -4,6 +4,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+// const Web3 = require('web3');
+// const truffleConnect = require('./controllers/poolController.js');
+
+// const port = 3000 || process.env.PORT;
 
 // Router
 const indexRouter = require('./routes/index');

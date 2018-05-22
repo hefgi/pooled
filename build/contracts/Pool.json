@@ -104,20 +104,20 @@
       "type": "event"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b506040516106ac3803806106ac8339810180604052810190808051820192919060200180518201929190505050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600190805190602001906100939291906100b9565b5080600290805190602001906100aa9291906100b9565b5042600381905550505061015e565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100fa57805160ff1916838001178555610128565b82800160010185558215610128579182015b8281111561012757825182559160200191906001019061010c565b5b5090506101359190610139565b5090565b61015b91905b8082111561015757600081600090555060010161013f565b5090565b90565b61053f8061016d6000396000f30060806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde03146100725780638da5cb5b14610102578063a6c3e6b914610159578063ca7bf28d146101e9578063f2fde38b14610214575b600080fd5b34801561007e57600080fd5b50610087610257565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100c75780820151818401526020810190506100ac565b50505050905090810190601f1680156100f45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561010e57600080fd5b506101176102f5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016557600080fd5b5061016e61031a565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101ae578082015181840152602081019050610193565b50505050905090810190601f1680156101db5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101f557600080fd5b506101fe6103b8565b6040518082815260200191505060405180910390f35b34801561022057600080fd5b50610255600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103be565b005b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102ed5780601f106102c2576101008083540402835291602001916102ed565b820191906000526020600020905b8154815290600101906020018083116102d057829003601f168201915b505050505081565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103b05780601f10610385576101008083540402835291602001916103b0565b820191906000526020600020905b81548152906001019060200180831161039357829003601f168201915b505050505081565b60035481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561041957600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561045557600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820d5aa0f7ab6bc6f7e05eaab8842f7c2a706209cd07e169da53278faa217c8682d0029",
-  "deployedBytecode": "0x60806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde03146100725780638da5cb5b14610102578063a6c3e6b914610159578063ca7bf28d146101e9578063f2fde38b14610214575b600080fd5b34801561007e57600080fd5b50610087610257565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100c75780820151818401526020810190506100ac565b50505050905090810190601f1680156100f45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561010e57600080fd5b506101176102f5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016557600080fd5b5061016e61031a565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101ae578082015181840152602081019050610193565b50505050905090810190601f1680156101db5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101f557600080fd5b506101fe6103b8565b6040518082815260200191505060405180910390f35b34801561022057600080fd5b50610255600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103be565b005b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102ed5780601f106102c2576101008083540402835291602001916102ed565b820191906000526020600020905b8154815290600101906020018083116102d057829003601f168201915b505050505081565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103b05780601f10610385576101008083540402835291602001916103b0565b820191906000526020600020905b81548152906001019060200180831161039357829003601f168201915b505050505081565b60035481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561041957600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561045557600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820d5aa0f7ab6bc6f7e05eaab8842f7c2a706209cd07e169da53278faa217c8682d0029",
-  "sourceMap": "91:232:0:-;;;197:124;8:9:-1;5:2;;;30:1;27;20:12;5:2;197:124:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;509:10:2;501:5;;:18;;;;;;;;;;;;;;;;;;269:5:0;262:4;:12;;;;;;;;;;;;:::i;:::-;;287:7;278:6;:16;;;;;;;;;;;;:::i;:::-;;314:3;298:13;:19;;;;197:124;;91:232;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "91:232:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;119:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;119:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;119:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;238:20:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:2;;;;;;;;;;;;;;;;;;;;;;;;;;;140::0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;140:20:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;140:20:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;165:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;165:28:0;;;;;;;;;;;;;;;;;;;;;;;832:174:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;832:174:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;119:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;238:20:2:-;;;;;;;;;;;;;:::o;140::0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;165:28::-;;;;:::o;832:174:2:-;653:5;;;;;;;;;;;639:19;;:10;:19;;;631:28;;;;;;;;928:1;908:22;;:8;:22;;;;900:31;;;;;;;;970:8;942:37;;963:5;;;;;;;;;;;942:37;;;;;;;;;;;;993:8;985:5;;:16;;;;;;;;;;;;;;;;;;832:174;:::o",
-  "source": "pragma solidity ^0.4.17;\n\nimport 'openzeppelin-solidity/contracts/ownership/Ownable.sol';\n\ncontract Pool is Ownable {\n\tstring public name;\n\tstring public author;\n  \tuint256 public deployed_time;\n\n\tfunction Pool(string _name, string _author) public Ownable() {\n\t\tname = _name;\n\t\tauthor = _author;\n\t\tdeployed_time = now;\n\t}\n}",
-  "sourcePath": "/Users/fjalcaraz/Desktop/SBC/project/pooled/contracts/Poll.sol",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516106ec3803806106ec8339810180604052810190808051820192919060200180518201929190505050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600190805190602001906100939291906100f9565b5080600290805190602001906100aa9291906100f9565b5042600381905550326000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505061019e565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061013a57805160ff1916838001178555610168565b82800160010185558215610168579182015b8281111561016757825182559160200191906001019061014c565b5b5090506101759190610179565b5090565b61019b91905b8082111561019757600081600090555060010161017f565b5090565b90565b61053f806101ad6000396000f30060806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde03146100725780638da5cb5b14610102578063a6c3e6b914610159578063ca7bf28d146101e9578063f2fde38b14610214575b600080fd5b34801561007e57600080fd5b50610087610257565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100c75780820151818401526020810190506100ac565b50505050905090810190601f1680156100f45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561010e57600080fd5b506101176102f5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016557600080fd5b5061016e61031a565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101ae578082015181840152602081019050610193565b50505050905090810190601f1680156101db5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101f557600080fd5b506101fe6103b8565b6040518082815260200191505060405180910390f35b34801561022057600080fd5b50610255600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103be565b005b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102ed5780601f106102c2576101008083540402835291602001916102ed565b820191906000526020600020905b8154815290600101906020018083116102d057829003601f168201915b505050505081565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103b05780601f10610385576101008083540402835291602001916103b0565b820191906000526020600020905b81548152906001019060200180831161039357829003601f168201915b505050505081565b60035481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561041957600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561045557600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582070fd7015d67fc1903696411a2637fabf425e37ff17c983581288b147195c3fc80029",
+  "deployedBytecode": "0x60806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde03146100725780638da5cb5b14610102578063a6c3e6b914610159578063ca7bf28d146101e9578063f2fde38b14610214575b600080fd5b34801561007e57600080fd5b50610087610257565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100c75780820151818401526020810190506100ac565b50505050905090810190601f1680156100f45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561010e57600080fd5b506101176102f5565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016557600080fd5b5061016e61031a565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101ae578082015181840152602081019050610193565b50505050905090810190601f1680156101db5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101f557600080fd5b506101fe6103b8565b6040518082815260200191505060405180910390f35b34801561022057600080fd5b50610255600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103be565b005b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102ed5780601f106102c2576101008083540402835291602001916102ed565b820191906000526020600020905b8154815290600101906020018083116102d057829003601f168201915b505050505081565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103b05780601f10610385576101008083540402835291602001916103b0565b820191906000526020600020905b81548152906001019060200180831161039357829003601f168201915b505050505081565b60035481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561041957600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561045557600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582070fd7015d67fc1903696411a2637fabf425e37ff17c983581288b147195c3fc80029",
+  "sourceMap": "91:329:0:-;;;197:221;8:9:-1;5:2;;;30:1;27;20:12;5:2;197:221:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;509:10:1;501:5;;:18;;;;;;;;;;;;;;;;;;259:5:0;252:4;:12;;;;;;;;;;;;:::i;:::-;;277:7;268:6;:16;;;;;;;;;;;;:::i;:::-;;304:3;288:13;:19;;;;405:9;397:5;;:17;;;;;;;;;;;;;;;;;;197:221;;91:329;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "91:329:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;119:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;119:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;119:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;238:20:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:1;;;;;;;;;;;;;;;;;;;;;;;;;;;140::0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;140:20:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;140:20:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;165:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;165:28:0;;;;;;;;;;;;;;;;;;;;;;;832:174:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;832:174:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;119:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;238:20:1:-;;;;;;;;;;;;;:::o;140::0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;165:28::-;;;;:::o;832:174:1:-;653:5;;;;;;;;;;;639:19;;:10;:19;;;631:28;;;;;;;;928:1;908:22;;:8;:22;;;;900:31;;;;;;;;970:8;942:37;;963:5;;;;;;;;;;;942:37;;;;;;;;;;;;993:8;985:5;;:16;;;;;;;;;;;;;;;;;;832:174;:::o",
+  "source": "pragma solidity ^0.4.17;\n\nimport 'openzeppelin-solidity/contracts/ownership/Ownable.sol';\n\ncontract Pool is Ownable {\n\tstring public name;\n\tstring public author;\n  \tuint256 public deployed_time;\n\n\tfunction Pool(string _name, string _author) public {\n\t\tname = _name;\n\t\tauthor = _author;\n\t\tdeployed_time = now;\n\t\t//https://dappsforbeginners.wordpress.com/tutorials/interactions-between-contracts/\n\t\towner = tx.origin;\n\t}\n}",
+  "sourcePath": "/Users/fjalcaraz/Desktop/SBC/project/pooled/contracts/Pool.sol",
   "ast": {
-    "absolutePath": "/Users/fjalcaraz/Desktop/SBC/project/pooled/contracts/Poll.sol",
+    "absolutePath": "/Users/fjalcaraz/Desktop/SBC/project/pooled/contracts/Pool.sol",
     "exportedSymbols": {
       "Pool": [
-        33
+        36
       ]
     },
-    "id": 34,
+    "id": 37,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -136,8 +136,8 @@
         "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
         "id": 2,
         "nodeType": "ImportDirective",
-        "scope": 34,
-        "sourceUnit": 107,
+        "scope": 37,
+        "sourceUnit": 93,
         "src": "26:63:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -151,10 +151,10 @@
               "id": 3,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 106,
+              "referencedDeclaration": 92,
               "src": "108:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$106",
+                "typeIdentifier": "t_contract$_Ownable_$92",
                 "typeString": "contract Ownable"
               }
             },
@@ -164,15 +164,15 @@
           }
         ],
         "contractDependencies": [
-          106
+          92
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 33,
+        "id": 36,
         "linearizedBaseContracts": [
-          33,
-          106
+          36,
+          92
         ],
         "name": "Pool",
         "nodeType": "ContractDefinition",
@@ -182,7 +182,7 @@
             "id": 6,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 33,
+            "scope": 36,
             "src": "119:18:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -208,7 +208,7 @@
             "id": 8,
             "name": "author",
             "nodeType": "VariableDeclaration",
-            "scope": 33,
+            "scope": 36,
             "src": "140:20:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -234,7 +234,7 @@
             "id": 10,
             "name": "deployed_time",
             "nodeType": "VariableDeclaration",
-            "scope": 33,
+            "scope": 36,
             "src": "165:28:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -257,26 +257,26 @@
           },
           {
             "body": {
-              "id": 31,
+              "id": 34,
               "nodeType": "Block",
-              "src": "258:63:0",
+              "src": "248:170:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 21,
+                    "id": 19,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 19,
+                      "id": 17,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 6,
-                      "src": "262:4:0",
+                      "src": "252:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -286,43 +286,43 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 20,
+                      "id": 18,
                       "name": "_name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "269:5:0",
+                      "src": "259:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "262:12:0",
+                    "src": "252:12:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 22,
+                  "id": 20,
                   "nodeType": "ExpressionStatement",
-                  "src": "262:12:0"
+                  "src": "252:12:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 25,
+                    "id": 23,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 23,
+                      "id": 21,
                       "name": "author",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 8,
-                      "src": "278:6:0",
+                      "src": "268:6:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -332,43 +332,43 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 24,
+                      "id": 22,
                       "name": "_author",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 14,
-                      "src": "287:7:0",
+                      "src": "277:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "278:16:0",
+                    "src": "268:16:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 26,
+                  "id": 24,
                   "nodeType": "ExpressionStatement",
-                  "src": "278:16:0"
+                  "src": "268:16:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 29,
+                    "id": 27,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 27,
+                      "id": 25,
                       "name": "deployed_time",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 10,
-                      "src": "298:13:0",
+                      "src": "288:13:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -378,55 +378,97 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 28,
+                      "id": 26,
                       "name": "now",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 123,
-                      "src": "314:3:0",
+                      "referencedDeclaration": 109,
+                      "src": "304:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "298:19:0",
+                    "src": "288:19:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 30,
+                  "id": 28,
                   "nodeType": "ExpressionStatement",
-                  "src": "298:19:0"
+                  "src": "288:19:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 32,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 29,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 40,
+                      "src": "397:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 30,
+                        "name": "tx",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 119,
+                        "src": "405:2:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_transaction",
+                          "typeString": "tx"
+                        }
+                      },
+                      "id": 31,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "origin",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "405:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "397:17:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 33,
+                  "nodeType": "ExpressionStatement",
+                  "src": "397:17:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 32,
+            "id": 35,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
-            "modifiers": [
-              {
-                "arguments": [],
-                "id": 17,
-                "modifierName": {
-                  "argumentTypes": null,
-                  "id": 16,
-                  "name": "Ownable",
-                  "nodeType": "Identifier",
-                  "overloadedDeclarations": [],
-                  "referencedDeclaration": 106,
-                  "src": "248:7:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Ownable_$106_$",
-                    "typeString": "type(contract Ownable)"
-                  }
-                },
-                "nodeType": "ModifierInvocation",
-                "src": "248:9:0"
-              }
-            ],
+            "modifiers": [],
             "name": "Pool",
             "nodeType": "FunctionDefinition",
             "parameters": {
@@ -438,7 +480,7 @@
                   "id": 12,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 32,
+                  "scope": 35,
                   "src": "211:12:0",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -464,7 +506,7 @@
                   "id": 14,
                   "name": "_author",
                   "nodeType": "VariableDeclaration",
-                  "scope": 32,
+                  "scope": 35,
                   "src": "225:14:0",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -490,32 +532,32 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 18,
+              "id": 16,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "258:0:0"
+              "src": "248:0:0"
             },
-            "scope": 33,
-            "src": "197:124:0",
+            "scope": 36,
+            "src": "197:221:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 34,
-        "src": "91:232:0"
+        "scope": 37,
+        "src": "91:329:0"
       }
     ],
-    "src": "0:323:0"
+    "src": "0:420:0"
   },
   "legacyAST": {
-    "absolutePath": "/Users/fjalcaraz/Desktop/SBC/project/pooled/contracts/Poll.sol",
+    "absolutePath": "/Users/fjalcaraz/Desktop/SBC/project/pooled/contracts/Pool.sol",
     "exportedSymbols": {
       "Pool": [
-        33
+        36
       ]
     },
-    "id": 34,
+    "id": 37,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -534,8 +576,8 @@
         "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
         "id": 2,
         "nodeType": "ImportDirective",
-        "scope": 34,
-        "sourceUnit": 107,
+        "scope": 37,
+        "sourceUnit": 93,
         "src": "26:63:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -549,10 +591,10 @@
               "id": 3,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 106,
+              "referencedDeclaration": 92,
               "src": "108:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$106",
+                "typeIdentifier": "t_contract$_Ownable_$92",
                 "typeString": "contract Ownable"
               }
             },
@@ -562,15 +604,15 @@
           }
         ],
         "contractDependencies": [
-          106
+          92
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 33,
+        "id": 36,
         "linearizedBaseContracts": [
-          33,
-          106
+          36,
+          92
         ],
         "name": "Pool",
         "nodeType": "ContractDefinition",
@@ -580,7 +622,7 @@
             "id": 6,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 33,
+            "scope": 36,
             "src": "119:18:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -606,7 +648,7 @@
             "id": 8,
             "name": "author",
             "nodeType": "VariableDeclaration",
-            "scope": 33,
+            "scope": 36,
             "src": "140:20:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -632,7 +674,7 @@
             "id": 10,
             "name": "deployed_time",
             "nodeType": "VariableDeclaration",
-            "scope": 33,
+            "scope": 36,
             "src": "165:28:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -655,26 +697,26 @@
           },
           {
             "body": {
-              "id": 31,
+              "id": 34,
               "nodeType": "Block",
-              "src": "258:63:0",
+              "src": "248:170:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 21,
+                    "id": 19,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 19,
+                      "id": 17,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 6,
-                      "src": "262:4:0",
+                      "src": "252:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -684,43 +726,43 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 20,
+                      "id": 18,
                       "name": "_name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "269:5:0",
+                      "src": "259:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "262:12:0",
+                    "src": "252:12:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 22,
+                  "id": 20,
                   "nodeType": "ExpressionStatement",
-                  "src": "262:12:0"
+                  "src": "252:12:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 25,
+                    "id": 23,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 23,
+                      "id": 21,
                       "name": "author",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 8,
-                      "src": "278:6:0",
+                      "src": "268:6:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -730,43 +772,43 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 24,
+                      "id": 22,
                       "name": "_author",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 14,
-                      "src": "287:7:0",
+                      "src": "277:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "278:16:0",
+                    "src": "268:16:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 26,
+                  "id": 24,
                   "nodeType": "ExpressionStatement",
-                  "src": "278:16:0"
+                  "src": "268:16:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 29,
+                    "id": 27,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 27,
+                      "id": 25,
                       "name": "deployed_time",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 10,
-                      "src": "298:13:0",
+                      "src": "288:13:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -776,55 +818,97 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 28,
+                      "id": 26,
                       "name": "now",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 123,
-                      "src": "314:3:0",
+                      "referencedDeclaration": 109,
+                      "src": "304:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "298:19:0",
+                    "src": "288:19:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 30,
+                  "id": 28,
                   "nodeType": "ExpressionStatement",
-                  "src": "298:19:0"
+                  "src": "288:19:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 32,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 29,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 40,
+                      "src": "397:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 30,
+                        "name": "tx",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 119,
+                        "src": "405:2:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_transaction",
+                          "typeString": "tx"
+                        }
+                      },
+                      "id": 31,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "origin",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "405:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "397:17:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 33,
+                  "nodeType": "ExpressionStatement",
+                  "src": "397:17:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 32,
+            "id": 35,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
-            "modifiers": [
-              {
-                "arguments": [],
-                "id": 17,
-                "modifierName": {
-                  "argumentTypes": null,
-                  "id": 16,
-                  "name": "Ownable",
-                  "nodeType": "Identifier",
-                  "overloadedDeclarations": [],
-                  "referencedDeclaration": 106,
-                  "src": "248:7:0",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Ownable_$106_$",
-                    "typeString": "type(contract Ownable)"
-                  }
-                },
-                "nodeType": "ModifierInvocation",
-                "src": "248:9:0"
-              }
-            ],
+            "modifiers": [],
             "name": "Pool",
             "nodeType": "FunctionDefinition",
             "parameters": {
@@ -836,7 +920,7 @@
                   "id": 12,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 32,
+                  "scope": 35,
                   "src": "211:12:0",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -862,7 +946,7 @@
                   "id": 14,
                   "name": "_author",
                   "nodeType": "VariableDeclaration",
-                  "scope": 32,
+                  "scope": 35,
                   "src": "225:14:0",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -888,23 +972,23 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 18,
+              "id": 16,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "258:0:0"
+              "src": "248:0:0"
             },
-            "scope": 33,
-            "src": "197:124:0",
+            "scope": 36,
+            "src": "197:221:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 34,
-        "src": "91:232:0"
+        "scope": 37,
+        "src": "91:329:0"
       }
     ],
-    "src": "0:323:0"
+    "src": "0:420:0"
   },
   "compiler": {
     "name": "solc",
@@ -912,5 +996,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-21T13:40:50.172Z"
+  "updatedAt": "2018-05-22T18:38:56.733Z"
 }

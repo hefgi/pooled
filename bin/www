@@ -81,19 +81,6 @@ function onListening() {
     ? `pipe ${addr}`
     : `port ${addr.port}`;
   debug(`Listening on ${bind}`);
-
-  if (typeof web3 !== 'undefined') {
-    console.warn('Using web3 detected from external source.');
-    // Use Mist/MetaMask's provider
-    /* eslint-disable */
-    truffleConnect.web3 = new Web3(web3.currentProvider); 
-    /* eslint-enable */
-  } else {
-    console.warn('No web3 detected. Falling back to http://127.0.0.1:7545. You should remove this fallback when you deploy live, as its inherently insecure. Consider switching to Metamask for development.');
-    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-    truffleConnect.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-  }
-  console.log(`Express Listening at http://localhost:${port}`);
 }
 
 /**

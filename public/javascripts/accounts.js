@@ -1,34 +1,48 @@
 $(document).ready(() => {
   let curraccount;
   $.get('/pools/getAccounts', (response) => {
-    for (let i = 0; i < response.length; i += 1) {
-      curraccount = response[i];
-      $('#options').append(`<option value='${curraccount}'>"${curraccount}"</option>"`);
+    const span = '<span class="navbar-text" id="navBarAddress"></span>';
+    if (response.length === 0) {
+      $('#navbarText').append(span);
+      $('#navbarText').text('Address not detected');
+    } else if (response.length === 1) {
+      $('#navbarText').append(span);
+      $('#navbarText').text(response[0]);
+    } else {
+      $('#navbarText').append('<ul class="navbar-nav active"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navBarAddress" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Address not detected</a><div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"></div></li></ul>');
+      for (let i = 0; i < response.length; i += 1) {
+        curraccount = response[i];
+        if (i === 0) {
+          $('#navBarAddress').text(curraccount);
+        } else {
+          $('#dropdown-menu').append(`<a class="dropdown-item" href="#">${curraccount}</a>`);
+        }
+      }
     }
   });
 });
 
 $('#test').ready(() => {
 
-	alert(tx);
+  alert(tx);
 
 });
 
-	// console.log('hello');
-	// debugger;
+  // console.log('hello');
+  // debugger;
  //  // $.ajax({
-	// 	// url: "/pools/txdata",
+  //  // url: "/pools/txdata",
  //  //   method: "GET"
  //  // }, function(response){
- //  // 	console.log('hello2');
+ //  //   console.log('hello2');
  //  //   console.log(response.responseJSON) //data is here from server
  //  // });
 
  //  $.ajax({
-	// 	url: "/pools/txdata",
+  //  url: "/pools/txdata",
  //    method: "GET"
  //  }).done(function(data) {
-	//  alert(data);
+  //  alert(data);
 
 // I got my data here
 
@@ -46,9 +60,9 @@ $('#test').ready(() => {
  //                    n && l._logger.error("Failed to send transaction with web3: ", n)
  //                })
 
-	// }).fail(function(data){
-	//  alert("Try again champ!");
-	// });
+  // }).fail(function(data){
+  //  alert("Try again champ!");
+  // });
 // });
 
 // I kind fire it if some div are on the page

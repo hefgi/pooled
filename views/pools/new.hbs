@@ -10,8 +10,15 @@
           <label for="author">Pool author</label>
           <input type="text" class="form-control" name="author">
         </div>
-        <button type="submit" class="btn btn-primary">Create a poll</button>
+        <button type="submit" class="btn btn-primary">Create a pool with data {{tx}}</button>
       </form>
+      <div id='test'></div>
     </div>
   </div>
 </div>
+<script>const tx = '{{tx}}'</script>
+<!-- <script src="/javascripts/accounts.js"></script>
+ -->
+
+// Have some javascript who trigger the button click event
+// to do my web3 calls.

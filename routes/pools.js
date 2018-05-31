@@ -15,6 +15,9 @@ router.get('/new', poolController.poolCreateGet);
 /* POST new course. */
 router.post('/create', poolController.poolCreatePost);
 
+/* Making an other route */
+router.get('/txdata', poolController.poolTxData);
+
 /* GET course details. */
 router.get('/:id', poolController.poolDetail);
 

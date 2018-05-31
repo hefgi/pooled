@@ -27,6 +27,8 @@ module.exports = {
     // we should use web3 on the front-end
     res.render('pools/index');
 
+    // LOGIC TO GRAB LIST OF POOLS FOR A USER
+
     // const { account } = req.body.account;
 
     // Pools.setProvider(web3.currentProvider);
@@ -36,9 +38,9 @@ module.exports = {
     //   return poolsInstance.getPools.call(account, { from: this.account });
     // }).then((result) => {
     //   // check what result return here
-    //   res.render('pools/index', {
-    //     pools: result,
-    //   });
+    // res.render('pools/index', {
+    //   pools: result,
+    // });
     // }).catch((err) => {
     //   console.log(err);
     //   next();
@@ -49,7 +51,17 @@ module.exports = {
     res.render('pools/show');
   },
   poolCreateGet: (req, res) => {
-    res.render('pools/new');
+    // const tx = {
+    //   address: '',
+    //   data: '',
+    // };
+    // const tx = 'test';
+    res.render('pools/new', { tx: 'text' });
+  },
+  poolTxData: (req, res) => {
+    const tx = { address: '', data: '' };
+
+    res.json(tx);
   },
   poolCreatePost: () => {
     // TODO: Need to deploy a contract here

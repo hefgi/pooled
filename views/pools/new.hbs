@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <form method="POST", action="/pools/create">
+      <form method="GET", action="/pools/newTx">
         <div class="form-group">
           <label for="name">Pool name</label>
           <input type="text" class="form-control" name="name">
@@ -16,9 +16,3 @@
     </div>
   </div>
 </div>
-<script>const tx = '{{tx}}'</script>
-<!-- <script src="/javascripts/accounts.js"></script>
- -->
-
-// Have some javascript who trigger the button click event
-// to do my web3 calls.

@@ -7,8 +7,6 @@
 const app = require('../app');
 const debug = require('debug')('pooledcoin:server');
 const http = require('http');
-const Web3 = require('web3');
-const truffleConnect = require('../controllers/poolController.js');
 
 /**
  * Normalize a port into a number, string, or false.

@@ -1,26 +1,97 @@
-// const contract = require('truffle-contract');
-// const poolsArtifact = require('../build/contracts/Pools.json');
+const fs = require('fs');
+const javascriptStringify = require('javascript-stringify');
 
-// const Pools = contract(poolsArtifact);
+// Web3
 const Web3 = require('web3');
 
 const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 
+// Truffle
+const contract = require('truffle-contract'); // problem here
+// Pools contract
+const poolsFileContents = fs.readFileSync('build/contracts/Pools.json', 'utf8');
+const poolsArtifact = JSON.parse(poolsFileContents);
+const Pools = contract(poolsArtifact);
+
+Pools.setProvider(web3.currentProvider);
+if (typeof Pools.currentProvider.sendAsync !== "function") {
+    Pools.currentProvider.sendAsync = function() {
+        return Pools.currentProvider.send.apply(
+            Pools.currentProvider, arguments
+        );
+    };
+}
+
+// const poolsArtifact = require('../build/contracts/Pools.json');
+
+// const poolsContract = truffleContract(poolsArtifact);
+// poolsContract.setProvider(web3.currentProvider);
+
+// Pool contract
+const poolArtifact = require('../build/contracts/Pool.json');
+
+const poolContract = contract(poolArtifact);
+poolContract.setProvider(web3.currentProvider);
+
+
+// const Pools = contract(poolsArtifact);
+
 // Display list of all Polls.
 module.exports = {
-  getAccounts: (req, res) => {
-    // Get the initial account balance so it can be displayed.
-    web3.eth.getAccounts((err, accs) => {
-      if (err != null) {
-        console.log('There was an error fetching your accounts.');
-        return;
-      }
+  poolCreate: (req, res) => {
+    res.render('pools/new');
+  },
+  poolCreateTx: (req, res) => {
+    // TODO: grab parameters from req
+    console.log(req.query);
 
-      if (accs.length === 0) {
-        console.log('Couldnt get any accounts! Make sure your Ethereum client is configured correctly.');
-        return;
-      }
-      res.send(accs);
+    const { name, author } = req.query;
+
+    console.log(`Name ${name} Author ${author}`);
+
+    console.log(`web3 ${web3}`);
+
+    console.log(`truffleContract ${contract}`);
+
+
+    console.log(`poolsArtifact ${poolsArtifact}`);
+
+    console.log(`poolsContract ${Pools}`);
+
+    // pools = Pools.deployed().then(function(instance) {
+
+    //   console.log('success');
+    //     // instance.getBalance.call(account, {from: account}).then(function(value) {
+    //     //     console.log("Printing value: value of....");
+    //     //     console.log(value.valueOf());
+    //     // });
+    // }).catch(function(e) {
+    //     console.error(`error ${e}`);
+    // });
+
+    let poolsInstance;
+
+    Pools.deployed().then((instance) => {
+      poolsInstance = instance;
+
+      // need to do the magic and return a tx object
+      const txParams = poolsInstance.deployPool.request(name, author).params;
+
+      console.log(`params :`);
+      console.log(txParams);
+
+      const tx = {
+        receiver: txParams[0].to,
+        gas: 0, // I have no idea ?!
+        value: 0,
+        data: txParams[0].data,
+      };
+      console.log(`tx :`);
+      console.log(javascriptStringify(tx));
+
+      res.render('pools/new-tx', { tx, txString: javascriptStringify(tx) });
+    }).catch((err) => {
+      console.log(`error ${err.message}`);
     });
   },
   poolList: (req, res) => {
@@ -49,22 +120,5 @@ module.exports = {
   poolDetail: (req, res) => {
     // TODO: Need to fetch and show detail of a pool
     res.render('pools/show');
-  },
-  poolCreateGet: (req, res) => {
-    // const tx = {
-    //   address: '',
-    //   data: '',
-    // };
-    // const tx = 'test';
-    res.render('pools/new', { tx: 'text' });
-  },
-  poolTxData: (req, res) => {
-    const tx = { address: '', data: '' };
-
-    res.json(tx);
-  },
-  poolCreatePost: () => {
-    // TODO: Need to deploy a contract here
-
   },
 };

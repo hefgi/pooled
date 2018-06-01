@@ -45,12 +45,13 @@ class App {
     /* eslint-enable */
 
     this.account = null;
+    this.bindEvents();
   }
 
   bindEvents() {
-    $(document).on('click', '#createPoolButton', App.createPool);
-    $(document).on('click', '#showPoolButton', App.showPool);
-    $(document).on('click', '#testButton', App.showPool);
+    $(document).on('click', '#sendTx', () => {
+      this.createTx();
+    });
 
     return this;
   }
@@ -86,20 +87,29 @@ class App {
     }
     /* eslint-enable */
 
-    this.web3.eth.sendTransaction({
+    const txHash = this.web3.eth.sendTransaction({
       from: this.account,
       to: txObj.receiver,
-      gas: txObj.gas,
+      // gas: txObj.gas, // maybe we should not put gas here ?
       value: this.web3.toWei(txObj.value),
       data: txObj.data,
+    }, (err, res) => {
+      if (err) {
+        console.log(`err : ${err}`);
+      }
+      console.log(`res : ${res}`);
+
+      // TODO: Redirect to list pools
+
     });
     return this;
   }
 }
 
 $(() => {
+  const app = new App();
+
   $(window).on('load', () => {
-    const app = new App();
     app.getAccounts();
   });
 });

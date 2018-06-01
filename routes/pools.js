@@ -3,22 +3,16 @@ const poolController = require('../controllers/poolController');
 
 const router = express.Router();
 
-/* GET all polls. */
+/* GET all pools. */
 router.get('/', poolController.poolList);
 
-/* GET all accounts. */
-router.get('/getAccounts', poolController.getAccounts);
+/* GET new pool form. */
+router.get('/new', poolController.poolCreate);
 
-/* GET new course form. */
-router.get('/new', poolController.poolCreateGet);
+/* GET new pool form. */
+router.get('/newTx', poolController.poolCreateTx);
 
-/* POST new course. */
-router.post('/create', poolController.poolCreatePost);
-
-/* Making an other route */
-router.get('/txdata', poolController.poolTxData);
-
-/* GET course details. */
+/* GET pool details. */
 router.get('/:id', poolController.poolDetail);
 
 module.exports = router;

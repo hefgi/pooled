@@ -1,10 +1,10 @@
 /* eslint-disable */
-const ConvertLib = artifacts.require('./ConvertLib.sol');
-const MetaCoin = artifacts.require('./MetaCoin.sol');
+const Pools = artifacts.require('./Pools.sol');
+const Pool = artifacts.require('./Pool.sol');
 /* eslint-enable */
 
 module.exports = (deployer) => {
-  deployer.deploy(ConvertLib);
-  deployer.link(ConvertLib, MetaCoin);
-  deployer.deploy(MetaCoin);
+  deployer.deploy(Pools);
+  deployer.link(Pools, Pool);
+  deployer.deploy(Pool, 'test', 'FJ');
 };

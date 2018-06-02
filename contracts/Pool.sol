@@ -5,7 +5,7 @@ import 'openzeppelin-solidity/contracts/ownership/Ownable.sol';
 contract Pool is Ownable {
 	string public name;
 	string public author;
-  	uint256 public deployed_time;
+  uint256 public deployed_time;
 
 	function Pool(string _name, string _author) public {
 		name = _name;

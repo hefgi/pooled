@@ -8,77 +8,46 @@ const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 
 // Truffle
 const contract = require('truffle-contract'); // problem here
+
 // Pools contract
 const poolsFileContents = fs.readFileSync('build/contracts/Pools.json', 'utf8');
 const poolsArtifact = JSON.parse(poolsFileContents);
 const Pools = contract(poolsArtifact);
 
+// Fix From dblockunity https://github.com/trufflesuite/truffle-contract/issues/57
 Pools.setProvider(web3.currentProvider);
-if (typeof Pools.currentProvider.sendAsync !== "function") {
-    Pools.currentProvider.sendAsync = function() {
-        return Pools.currentProvider.send.apply(
-            Pools.currentProvider, arguments
-        );
-    };
+if (typeof Pools.currentProvider.sendAsync !== 'function') {
+  Pools.currentProvider.sendAsync = function provider(...args) {
+    return Pools.currentProvider.send(...args);
+  };
 }
 
-// const poolsArtifact = require('../build/contracts/Pools.json');
-
-// const poolsContract = truffleContract(poolsArtifact);
-// poolsContract.setProvider(web3.currentProvider);
-
 // Pool contract
-const poolArtifact = require('../build/contracts/Pool.json');
+const poolFileContents = fs.readFileSync('build/contracts/Pool.json', 'utf8');
+const poolArtifact = JSON.parse(poolFileContents);
+const Pool = contract(poolArtifact);
 
-const poolContract = contract(poolArtifact);
-poolContract.setProvider(web3.currentProvider);
+// Fix From dblockunity https://github.com/trufflesuite/truffle-contract/issues/57
+Pool.setProvider(web3.currentProvider);
+if (typeof Pool.currentProvider.sendAsync !== 'function') {
+  Pool.currentProvider.sendAsync = function provider(...args) {
+    return Pool.currentProvider.send(...args);
+  };
+}
 
-
-// const Pools = contract(poolsArtifact);
-
-// Display list of all Polls.
 module.exports = {
   poolCreate: (req, res) => {
     res.render('pools/new');
   },
-  poolCreateTx: (req, res) => {
-    // TODO: grab parameters from req
-    console.log(req.query);
-
+  poolCreateTx: (req, res, next) => {
     const { name, author } = req.query;
-
-    console.log(`Name ${name} Author ${author}`);
-
-    console.log(`web3 ${web3}`);
-
-    console.log(`truffleContract ${contract}`);
-
-
-    console.log(`poolsArtifact ${poolsArtifact}`);
-
-    console.log(`poolsContract ${Pools}`);
-
-    // pools = Pools.deployed().then(function(instance) {
-
-    //   console.log('success');
-    //     // instance.getBalance.call(account, {from: account}).then(function(value) {
-    //     //     console.log("Printing value: value of....");
-    //     //     console.log(value.valueOf());
-    //     // });
-    // }).catch(function(e) {
-    //     console.error(`error ${e}`);
-    // });
 
     let poolsInstance;
 
     Pools.deployed().then((instance) => {
       poolsInstance = instance;
 
-      // need to do the magic and return a tx object
       const txParams = poolsInstance.deployPool.request(name, author).params;
-
-      console.log(`params :`);
-      console.log(txParams);
 
       const tx = {
         receiver: txParams[0].to,
@@ -86,36 +55,60 @@ module.exports = {
         value: 0,
         data: txParams[0].data,
       };
-      console.log(`tx :`);
-      console.log(javascriptStringify(tx));
 
       res.render('pools/new-tx', { tx, txString: javascriptStringify(tx) });
     }).catch((err) => {
       console.log(`error ${err.message}`);
+      next();
     });
   },
   poolList: (req, res) => {
-    // we should use web3 on the front-end
-    res.render('pools/index');
+    const { addr } = req.query;
 
-    // LOGIC TO GRAB LIST OF POOLS FOR A USER
+    let poolsInstance;
 
-    // const { account } = req.body.account;
+    Pools.deployed().then((instance) => {
+      poolsInstance = instance;
 
-    // Pools.setProvider(web3.currentProvider);
-    // let poolsInstance;
-    // Pools.deployed().then((instance) => {
-    //   poolsInstance = instance;
-    //   return poolsInstance.getPools.call(account, { from: this.account });
-    // }).then((result) => {
-    //   // check what result return here
-    // res.render('pools/index', {
-    //   pools: result,
-    // });
-    // }).catch((err) => {
-    //   console.log(err);
-    //   next();
-    // });
+      return poolsInstance.getPools(addr);
+    }).then((result) => {
+      const promises = [];
+
+      for (let i = 0; i < result.length; i += 1) {
+        promises.push(Pool.at(result[i]));
+      }
+
+      return Promise.all(promises);
+    }).then((result) => {
+      const promises = result.map((poolInstance) => {
+        const nestedPromises = [];
+        nestedPromises.push(poolInstance.deployed_time());
+        nestedPromises.push(poolInstance.name());
+        nestedPromises.push(poolInstance.author());
+        nestedPromises.push(poolInstance.address);
+        return Promise.all(nestedPromises);
+      });
+      return Promise.all(promises);
+    })
+      .then((result) => {
+        const pools = [];
+
+        result.forEach((ob) => {
+          pools.push({
+            date: new Date(ob[0].toNumber() * 1000),
+            name: ob[1],
+            author: ob[2],
+            address: ob[3],
+          });
+        });
+
+        console.log('pools');
+        console.log(pools);
+        res.render('pools/index', { pools });
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   },
   poolDetail: (req, res) => {
     // TODO: Need to fetch and show detail of a pool

@@ -1,18 +1,17 @@
 <div class="container">
-  <h1>Our awesome polls</h1>
-  <div class="row">
-    {{#polls}}
+  <div class="row" style="margin-top: 20px;">
+    {{#pools}}
     <div class="col-xs-12">
-      <div class="card" style="margin-bottom: 20px;">
-        <img class="card-img-top" src="http://via.placeholder.com/1400x150" alt="Card image cap">
+      <div class="card" style="margin-bottom: 20px; margin-right: 20px;">
         <div class="card-body">
           <h5 class="card-title">{{name}}</h5>
-          <p class="card-text">{{author}}</p>
-          <a href="/pools/{{id}}" class="btn btn-primary">View pool</a>
+          <p class="card-text">Author : {{author}}</p>
+          <p class="card-text">Address : {{address}}</p>
+          <a href="/pools/{{address}}" class="btn btn-primary">View pool</a>
         </div>
       </div>
     </div>
-    {{/polls}}
-    <a href="/pools/new" class="btn btn-success">Create a new pool</a>
+    {{/pools}}
   </div>
+  <a href="/pools/new" class="btn btn-success">Create a new pool</a>
 </div>

@@ -1,7 +1,7 @@
 // Question: How do I import/require web3 and/or tx object
 // from outside to avoid disable/enable eslint ?
 
-function addAccountsToNavBar(accounts) {
+function addAccountsToNavBarDropDown(accounts) {
   const $navBarText = $('#navbarText');
   // TODO: Need to delete some object but not empty the entire div
   // $navBarText.empty();
@@ -30,6 +30,38 @@ function addAccountsToNavBar(accounts) {
   }
 }
 
+function addAccountToNavBarItems(account) {
+  const $poolsLink = $('#poolsLink');
+
+  if (typeof account !== 'undefined') {
+    $poolsLink.attr('href', `/pools?addr=${account}`);
+    $poolsLink.removeClass('inactive');
+  } else {
+    $poolsLink.attr('href', '/pools');
+    $poolsLink.attr('class', 'nav-link inactive');
+  }
+}
+
+function updateNavBarWithRoute(route) {
+  const $poolsLink = $('#poolsLink');
+  const $createPoolLink = $('#createPoolLink');
+  const $homeLink = $('#homeLink');
+
+  if (route.includes('/pools/new')) {
+    $createPoolLink.addClass('active');
+    $poolsLink.removeClass('active');
+    $homeLink.removeClass('active');
+  } else if (route.includes('/pools')) {
+    $poolsLink.addClass('active');
+    $createPoolLink.removeClass('active');
+    $homeLink.removeClass('active');
+  } else {
+    $homeLink.addClass('active');
+    $createPoolLink.removeClass('active');
+    $poolsLink.removeClass('active');
+  }
+}
+
 class App {
   constructor() {
     // Initialize web3 and set the provider to the testRPC.
@@ -46,21 +78,25 @@ class App {
 
     this.account = null;
     this.bindEvents();
+    this.getRoute();
   }
 
   bindEvents() {
-    $(document).on('click', '#sendTx', () => {
+    $(document).on('click', '#createPoolTx', () => {
       this.createTx();
     });
 
     return this;
   }
 
+  getRoute() {
+    const route = window.location.pathname;
+    updateNavBarWithRoute(route);
+
+    return this;
+  }
+
   getAccounts() {
-    // this.bindEvents();
-
-    console.log('Getting Accounts...');
-
     this.web3.eth.getAccounts((error, accounts) => {
       if (error) {
         console.log(error);
@@ -68,11 +104,11 @@ class App {
 
       const [account] = accounts;
       this.account = account;
-      addAccountsToNavBar(accounts);
-
+      addAccountsToNavBarDropDown(accounts);
+      addAccountToNavBarItems(accounts[0]);
       return this;
     });
-    // Question: where should I put my `return this;` ?
+
     return this;
   }
 
@@ -87,7 +123,7 @@ class App {
     }
     /* eslint-enable */
 
-    const txHash = this.web3.eth.sendTransaction({
+    this.web3.eth.sendTransaction({
       from: this.account,
       to: txObj.receiver,
       // gas: txObj.gas, // maybe we should not put gas here ?
@@ -98,9 +134,6 @@ class App {
         console.log(`err : ${err}`);
       }
       console.log(`res : ${res}`);
-
-      // TODO: Redirect to list pools
-
     });
     return this;
   }
@@ -113,48 +146,3 @@ $(() => {
     app.getAccounts();
   });
 });
-
-// $('#test').ready(() => {
-
-//   alert(tx);
-
-// });
-
-//   console.log('hello');
-//   debugger;
-//   // $.ajax({
-//  // url: "/pools/txdata",
-//   //   method: "GET"
-//   // }, function(response){
-//   //   console.log('hello2');
-//   //   console.log(response.responseJSON) //data is here from server
-//   // });
-
-//   $.ajax({
-//    url: "/pools/txdata",
-//     method: "GET"
-//   }).done(function(data) {
-//    alert(data);
-
-// I got my data here
-
-// now I can bind events from button with this data
-
-// and do the transaction
-
-//  this._web3.eth.sendTransaction({
-//                     from: n.from,
-//                     to: n.to,
-//                     gas: n.gasLimit,
-//                     value: this._web3.toWei(n.value),
-//                     data: n.data
-//                 }, function(n) {
-//                     n && l._logger.error("Failed to send transaction with web3: ", n)
-//                 })
-
-//   }).fail(function(data){
-//    alert("Try again champ!");
-//   });
-// });
-
-// I kind fire it if some div are on the page

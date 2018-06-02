@@ -111,7 +111,31 @@ module.exports = {
       });
   },
   poolDetail: (req, res) => {
-    // TODO: Need to fetch and show detail of a pool
-    res.render('pools/show');
+    const { addr } = req.params;
+
+    let poolInstance;
+    console.log(`Show Pool ${addr}`);
+
+    Pool.at(addr).then((instance) => {
+      console.log(instance);
+
+      poolInstance = instance;
+
+      const promises = [];
+      promises.push(poolInstance.deployed_time(), poolInstance.name(), poolInstance.author());
+      return Promise.all(promises);
+    }).then((result) => {
+      console.log(result);
+      const pool = {
+        date: new Date(result[0].toNumber() * 1000),
+        name: result[1],
+        author: result[2],
+        address: addr,
+      };
+
+      res.render('pools/show', { pool });
+    }).catch((err) => {
+      console.log(err.message);
+    });
   },
 };

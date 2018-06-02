@@ -3,9 +3,6 @@ const poolController = require('../controllers/poolController');
 
 const router = express.Router();
 
-/* GET all pools. */
-router.get('/', poolController.poolList);
-
 /* GET new pool form. */
 router.get('/new', poolController.poolCreate);
 
@@ -13,6 +10,9 @@ router.get('/new', poolController.poolCreate);
 router.get('/newTx', poolController.poolCreateTx);
 
 /* GET pool details. */
-router.get('/:id', poolController.poolDetail);
+router.get('/:addr', poolController.poolDetail);
+
+/* GET all pools. */
+router.get('/', poolController.poolList);
 
 module.exports = router;

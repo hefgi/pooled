@@ -1,10 +1,13 @@
 const fs = require('fs');
 const javascriptStringify = require('javascript-stringify');
 
-// Web3
-const Web3 = require('web3');
+// // Web3
+// const Web3 = require('web3');
 
-const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+// const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+
+const web3 = require('../app.js')[1];
+
 
 // Truffle
 const contract = require('truffle-contract'); // problem here
@@ -67,19 +70,24 @@ module.exports = {
 
     let poolsInstance;
 
+
     Pools.deployed().then((instance) => {
       poolsInstance = instance;
+      // got pools instance, who have a mapping of pool
 
       return poolsInstance.getPools(addr);
     }).then((result) => {
       const promises = [];
-
+      // I got an array of pools addr --> result = [0x1, 0x2, 0x3]
+      // now I need to get each Pool instances.
       for (let i = 0; i < result.length; i += 1) {
         promises.push(Pool.at(result[i]));
       }
 
       return Promise.all(promises);
     }).then((result) => {
+      // I got an array of instances --> result = [instance1, instance2, instance3...]
+
       const promises = result.map((poolInstance) => {
         const nestedPromises = [];
         nestedPromises.push(poolInstance.deployed_time());
@@ -91,6 +99,9 @@ module.exports = {
       return Promise.all(promises);
     })
       .then((result) => {
+
+        // result looks like : []
+
         const pools = [];
 
         result.forEach((ob) => {

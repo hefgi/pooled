@@ -7,6 +7,12 @@ const logger = require('morgan');
 // const Web3 = require('web3');
 // const truffleConnect = require('./controllers/poolController.js');
 
+// Web3
+const Web3 = require('web3');
+
+const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+
+
 // const port = 3000 || process.env.PORT;
 
 // Router
@@ -45,4 +51,4 @@ app.use((err, req, res) => {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = [app, web3];

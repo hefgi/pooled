@@ -38,6 +38,52 @@ if (typeof Pool.currentProvider.sendAsync !== 'function') {
   };
 }
 
+function stringForState(state) {
+  switch (state) {
+    case 0:
+      return "open";
+    case 1:
+      return "close";
+    case 2:
+      return "transferred";
+    case 3: 
+      return "claiming";
+  }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function poolObject(ob) {
+  return {
+    createdAt: new Date(ob[4].toNumber() * 1000).toISOString().slice(0,10),
+    closeAt: new Date(ob[0][0].toNumber() * 1000).toISOString().slice(0,10),
+    minPerUser: ob[0][1].toNumber(),
+    maxPerUser: ob[0][2].toNumber(),
+    maxPool: ob[0][3].toNumber(),
+    totalEth: ob[2].toNumber(),
+    autoClaim: ob[0][4],
+    dest: ob[0][5],
+    ownerFeesPct: ob[0][6].toNumber(),
+    state: capitalizeFirstLetter(stringForState(ob[1].toNumber())),
+    address: ob[3],
+    shortAddress: ob[3].slice(0,8),
+    ownerAddress: ob[5]
+  };
+}
+
+function poolDetailPromises(poolInstance) {
+  const promises = [];
+  promises.push(poolInstance.getPool());
+  promises.push(poolInstance.state());
+  promises.push(poolInstance.totalEth());
+  promises.push(poolInstance.address);
+  promises.push(poolInstance.deployedAt());
+  promises.push(poolInstance.owner());
+  return promises
+}
+
 module.exports = {
   poolCreate: (req, res) => {
     res.render('pools/new');
@@ -105,28 +151,18 @@ module.exports = {
       // I got an array of instances --> result = [instance1, instance2, instance3...]
 
       const promises = result.map((poolInstance) => {
-        const nestedPromises = [];
-        nestedPromises.push(poolInstance.deployed_time());
-        nestedPromises.push(poolInstance.name());
-        nestedPromises.push(poolInstance.author());
-        nestedPromises.push(poolInstance.address);
+        const nestedPromises = poolDetailPromises(poolInstance);
         return Promise.all(nestedPromises);
       });
       return Promise.all(promises);
     })
       .then((result) => {
-
         // result looks like : []
 
         const pools = [];
 
         result.forEach((ob) => {
-          pools.push({
-            date: new Date(ob[0].toNumber() * 1000),
-            name: ob[1],
-            author: ob[2],
-            address: ob[3],
-          });
+          pools.push(poolObject(ob));
         });
 
         console.log('pools');
@@ -148,17 +184,11 @@ module.exports = {
 
       poolInstance = instance;
 
-      const promises = [];
-      promises.push(poolInstance.deployed_time(), poolInstance.name(), poolInstance.author());
+      const promises = poolDetailPromises(poolInstance);
       return Promise.all(promises);
     }).then((result) => {
       console.log(result);
-      const pool = {
-        date: new Date(result[0].toNumber() * 1000),
-        name: result[1],
-        author: result[2],
-        address: addr,
-      };
+      const pool = poolObject(result);
 
       res.render('pools/show', { pool });
     }).catch((err) => {

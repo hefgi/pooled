@@ -1,8 +1,20 @@
 <div class="container">
-  <h1>Pool of {{pool.name}}</h1>
+  <h1>Pool {{pool.address}}</h1>
   <div class="row">
-    <p class="card-text">Author : {{pool.author}}</p>
-    <p class="card-text">Address : {{pool.address}}</p>
-    <p class="card-text">Deployed at : {{pool.date}}</p>
+  	<p class="card-text">Status : {{pool.state}}</p>
+  	<p class="card-text">Total pool allocation : {{pool.totalEth}}</p>
+  	 <p class="card-text">Close At : {{pool.closeAt}}</p>
+	</div>
+  <div class="row">
+    <p class="card-text">Created At : {{pool.createdAt}}</p>
+    <p class="card-text">Min per Contributor : {{pool.minPerUser}}</p>
+    <p class="card-text">Max per Contributor : {{pool.maxPerUser}}</p>
+    <p class="card-text">Max pool allocation : {{pool.maxPool}}</p>
+    <p class="card-text">Auto-distribution : {{pool.autoClaim}}</p>
+    <p class="card-text">Destination address : {{pool.dest}}</p>
+    <p class="card-text">Pooled.io fees : 0.5%</p>
+    <p class="card-text">Owner fees : {{pool.ownerFeesPct}}</p>
+    <p class="card-text">Pool Owner : {{pool.ownerAddress}}</p>
+
   </div>
 </div>

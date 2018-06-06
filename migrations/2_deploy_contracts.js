@@ -6,5 +6,7 @@ const Pool = artifacts.require('./Pool.sol');
 module.exports = (deployer) => {
   deployer.deploy(Pools);
   deployer.link(Pools, Pool);
-  deployer.deploy(Pool, 'test', 'FJ');
+    //deployer.deploy(Pool, 3600, 1, 10, 100, 5);
+
+  deployer.deploy(Pool, 3600, 1, 10, 100, 'true', '0x30565A380A89A74000517b827a8dAcdB8d948E65', 5);
 };

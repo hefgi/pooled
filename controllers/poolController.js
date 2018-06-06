@@ -2,11 +2,11 @@ const fs = require('fs');
 const javascriptStringify = require('javascript-stringify');
 
 // // Web3
-// const Web3 = require('web3');
+const Web3 = require('web3');
 
-// const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 
-const web3 = require('../app.js')[1];
+// const web3 = require('../app.js')[1];
 
 
 // Truffle

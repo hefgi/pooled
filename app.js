@@ -12,14 +12,15 @@ const Web3 = require('web3');
 
 const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 
-
 // const port = 3000 || process.env.PORT;
+
+const app = express();
+
+// module.exports = [app, web3];
 
 // Router
 const indexRouter = require('./routes/index');
 const poolsRouter = require('./routes/pools');
-
-const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -50,5 +51,6 @@ app.use((err, req, res) => {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = [app, web3];

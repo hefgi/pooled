@@ -1,20 +1,68 @@
-<div class="container">
-  <h1>Pool {{pool.address}}</h1>
-  <div class="row">
-  	<p class="card-text">Status : {{pool.state}}</p>
-  	<p class="card-text">Total pool allocation : {{pool.totalEth}}</p>
-  	 <p class="card-text">Close At : {{pool.closeAt}}</p>
-	</div>
-  <div class="row">
-    <p class="card-text">Created At : {{pool.createdAt}}</p>
-    <p class="card-text">Min per Contributor : {{pool.minPerUser}}</p>
-    <p class="card-text">Max per Contributor : {{pool.maxPerUser}}</p>
-    <p class="card-text">Max pool allocation : {{pool.maxPool}}</p>
-    <p class="card-text">Auto-distribution : {{pool.autoClaim}}</p>
-    <p class="card-text">Destination address : {{pool.dest}}</p>
-    <p class="card-text">Pooled.io fees : 0.5%</p>
-    <p class="card-text">Owner fees : {{pool.ownerFeesPct}}</p>
-    <p class="card-text">Pool Owner : {{pool.ownerAddress}}</p>
-
-  </div>
+<div class="jumbotron">
+  <h1 class="display-10">Pool {{pool.shortAddress}}</h1>
+  <small>{{pool.address}}</small>
+  <hr class="my-4">
+	<p class="card-text">Status : {{pool.stateString}}</p>
+	<p class="card-text">Total pool allocation : {{pool.totalEth}} ETH</p>
+	<p class="card-text">Close At : {{pool.closeAt}}</p>
+	<hr class="my-4">
+	{{#if forOwner}}
+		<p class="card-text" id="myWalletAddress">You own this pool with address : {{pool.ownerAddress}}</p>
+	  {{#if state.isOpen}}
+	  <p class="lead">
+	  	<a href="/{{pool.address}}/edit" class="btn btn-primary btn-lg">Edit pool</button></a>
+	  	<a href="" class="btn btn-primary btn-lg margin-left: 20px;">Close Pool</button></a>
+	  	<a href="" class="btn btn-primary btn-lg margin-left: 20px;">Cancel Pool</button></a>
+		</p>
+		{{else if state.Close}}
+	  <p class="lead">
+	  	<a href="/pools" class="btn btn-primary btn-lg margin-left: 20px;">Transfer Pool Funds</button></a>
+		</p>
+		{{else if state.Claiming}}
+	  <p class="lead">Claiming Tokens in progress...
+		</p>
+		{{else}}
+			{{#if state.Claiming}}
+		  	<p class="lead">Claiming Tokens in progress...</p>
+		  {{/if}}
+			{{!-- 		  TODO: Need to handle when token have been received but state is still transferred
+			 --}}			
+ 			{{#unless pool.autoClaim}}
+			  <p class="lead">
+			  	<a href="/pools" class="btn btn-primary btn-lg margin-left: 20px;">Authorize Token Distribution</button></a>
+				</p>
+			{{/unless}}
+	  {{/if}}
+	{{else}}
+		<p class="card-text" id="myWalletAddress">My Wallet address :</p>
+	  {{#if state.isOpen}}
+	  <p class="lead">
+	  	<a href="/pools" class="btn btn-primary btn-lg">Contribute Ether</button></a>
+	  	<a href="/pools" class="btn btn-primary btn-lg margin-left: 20px;">Withdraw Ether</button></a>
+	  	<a href="/pools" class="btn btn-primary btn-lg margin-left: 20px;">Claim tokens</button></a>
+		</p>
+		{{!-- 		  TODO: Need to handle when token have been received but state is still transferred
+			 --}}			
+		{{else if state.Claiming}}
+	  <p class="lead">
+	  	<a href="/pools" class="btn btn-primary btn-lg margin-left: 20px;">Claim tokens</button></a>
+		</p>
+		{{else}}
+	  <p class="lead">Waiting for tokens...
+		</p>
+		{{/if}}
+	{{/if}}
+  <hr class="my-4">
+  <p class="card-text">Created At : {{pool.createdAt}}</p>
+  <p class="card-text">Min per Contributor : {{pool.minPerUser}} ETH</p>
+  <p class="card-text">Max per Contributor : {{pool.maxPerUser}} ETH</p>
+  <p class="card-text">Max pool allocation : {{pool.maxPool}} ETH</p>
+  <p class="card-text">Auto-distribution : {{pool.autoClaim}}</p>
+  <p class="card-text">Destination address : {{pool.dest}}</p>
+  <p class="card-text">Pooled.io fees : 0.5%</p>
+  <p class="card-text">Owner fees : {{pool.ownerFeesPct}} %</p>
+  <p class="card-text">Pool Owner : {{pool.ownerAddress}}</p>
 </div>
+{{#if forOwner}}
+<script>// TODO:add logic to compare pool.ownerAddress with this.account. if it's not the same we redirect to /:address </script>
+{{/if}}

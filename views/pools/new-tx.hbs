@@ -1,8 +1,31 @@
-<h1>Send your transaction now</h1>
-<button id='createPoolTx'>Click here</button>
-<p>or send it manually with this data : ...</p>
-<p>to : {{{ tx.receiver }}}<p>
-<p>value : {{ tx.value }}</p>
-<p>data : {{ tx.data }}</p>
-
+<div class="jumbotron">
+	<h1 class="display-10">Send your transaction now</h1>
+	<hr class="my-4">
+	<button id='createPoolTx' class="btn btn-primary">Send using MetaMask</button>
+	<hr class="my-4">
+	<p>OR</p>
+	<hr class="my-4">
+	<h6>Send a manual transaction</h6>
+	<div class="input-group mb-3">
+  	<div class="input-group-prepend">
+    	<span class="input-group-text" id="basic-addon3">To</span>
+  	</div>
+  	<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{{ tx.receiver }}}">
+	</div>
+	<div class="input-group mb-3">
+  	<div class="input-group-prepend">
+    	<span class="input-group-text" id="basic-addon3">Value</span>
+  	</div>
+  	<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{ tx.value }}">
+  	 <div class="input-group-append">
+    	<span class="input-group-text">ETH</span>
+  	</div>
+	</div>
+	<div class="input-group mb-3">
+  	<div class="input-group-prepend">
+    	<span class="input-group-text" id="basic-addon3">Data</span>
+  	</div>
+  	<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{ tx.data }}">
+	</div>
+</div>
 <script>const tx = {{{ txString }}}</script>

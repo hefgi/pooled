@@ -38,6 +38,35 @@ if (typeof Pool.currentProvider.sendAsync !== 'function') {
   };
 }
 
+function stateObject(state, closeAt) {
+  let isOpen = false;
+  let isClose = false;
+  let isTransferred = false;
+  let isClaiming = false;
+  console.log(`test ${state}`);
+  switch (state) {
+    case 0:
+      isOpen = true;
+      break;
+    case 1:
+      isClose = true;
+      break;
+    case 2:
+      isTransferred = true;
+      break;
+    case 3: 
+      isClaiming = true;
+      break;
+  }
+
+  if (isOpen == true && new Date() > closeAt) {
+    isOpen = false;
+    isClose = true;
+  }
+
+  return {isOpen, isClose, isTransferred, isClaiming};
+}
+
 function stringForState(state) {
   switch (state) {
     case 0:
@@ -66,7 +95,8 @@ function poolObject(ob) {
     autoClaim: ob[0][4],
     dest: ob[0][5],
     ownerFeesPct: ob[0][6].toNumber(),
-    state: capitalizeFirstLetter(stringForState(ob[1].toNumber())),
+    stateString: capitalizeFirstLetter(stringForState(ob[1].toNumber())),
+    state: ob[1].toNumber(),
     address: ob[3],
     shortAddress: ob[3].slice(0,8),
     ownerAddress: ob[5]
@@ -127,6 +157,58 @@ module.exports = {
       next();
     });
   },
+  poolCreateSuccess: (req, res) => {
+    const { addr } = req.query;
+
+    let poolsInstance;
+
+    console.log('hello');
+    console.log(req.query);
+    Pools.deployed().then((instance) => {
+      poolsInstance = instance;
+      // got pools instance, who have a mapping of pool
+          console.log('hello2');
+
+      return poolsInstance.getPools(addr);
+    }).then((result) => {
+          console.log('hello3');
+      const promises = [];
+      // I got an array of pools addr --> result = [0x1, 0x2, 0x3]
+      // now I need to get each Pool instances.
+      for (let i = 0; i < result.length; i += 1) {
+        promises.push(Pool.at(result[i]));
+      }
+
+      return Promise.all(promises);
+    }).then((result) => {
+      // I got an array of instances --> result = [instance1, instance2, instance3...]
+
+      const promises = result.map((poolInstance) => {
+        const nestedPromises = poolDetailPromises(poolInstance);
+        return Promise.all(nestedPromises);
+      });
+      return Promise.all(promises);
+    }).then((result) => {
+      // result looks like : []
+
+      const pools = [];
+
+      result.forEach((ob) => {
+        pools.push(poolObject(ob));
+      });
+
+      //sort pools by createAt date
+      pools.sort(function(a,b){
+         return b.createdAt - a.createdAt;
+      });
+
+      //return the most recent pool address
+      const url = `http://localhost:3000/pools/${pools[0].address}`
+      res.render('pools/new-success', { url });
+    }).catch((err) => {
+      console.log(err.message);
+    })
+  },
   poolList: (req, res) => {
     const { addr } = req.query;
 
@@ -180,17 +262,36 @@ module.exports = {
     console.log(`Show Pool ${addr}`);
 
     Pool.at(addr).then((instance) => {
-      console.log(instance);
-
       poolInstance = instance;
 
       const promises = poolDetailPromises(poolInstance);
       return Promise.all(promises);
     }).then((result) => {
-      console.log(result);
       const pool = poolObject(result);
+      const state = stateObject(pool.state, pool.closeAt);
+      console.log({ pool, state });
+      res.render('pools/show', { pool, state });
+    }).catch((err) => {
+      console.log(err.message);
+    });
+  },
+  poolDetailOwner: (req, res) => {
+    const { addr } = req.params;
+    const forOwner = true;
 
-      res.render('pools/show', { pool });
+    let poolInstance;
+    console.log(`Show Pool Owner ${addr}`);
+
+    Pool.at(addr).then((instance) => {
+      poolInstance = instance;
+
+      const promises = poolDetailPromises(poolInstance);
+      return Promise.all(promises);
+    }).then((result) => {
+      const pool = poolObject(result);
+      const state = stateObject(pool.state, pool.closeAt);
+      console.log({ pool, state, forOwner });
+      res.render('pools/show', { pool, state, forOwner });
     }).catch((err) => {
       console.log(err.message);
     });

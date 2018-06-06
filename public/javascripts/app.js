@@ -32,10 +32,12 @@ function addAccountsToNavBarDropDown(accounts) {
 
 function addAccountToNavBarItems(account) {
   const $poolsLink = $('#poolsLink');
+  const $poolsSuccessLink = $('#poolsSuccessLink');
 
   if (typeof account !== 'undefined') {
     $poolsLink.attr('href', `/pools?addr=${account}`);
     $poolsLink.removeClass('inactive');
+    $poolsSuccessLink.attr('href', `/pools?addr=${account}`);
   } else {
     $poolsLink.attr('href', '/pools');
     $poolsLink.attr('class', 'nav-link inactive');
@@ -136,6 +138,7 @@ class App {
         console.log(`err : ${err}`);
       }
       console.log(`res : ${res}`);
+      window.location.href = `http://localhost:3000/pools/newSuccess?addr=${this.account}`;
     });
     return this;
   }

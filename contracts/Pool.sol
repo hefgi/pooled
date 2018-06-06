@@ -61,7 +61,7 @@ contract Pool is Ownable {
 
   event logUpdatePool(uint256 _closeSeconds, uint256 _minPerUser, uint256 _maxPerUser, uint256 _maxPool, bool _autoClaim);
 
-	function Pool(uint256 _closeSeconds, uint256 _minPerUser, uint256 _maxPerUser, uint256 _maxPool, bool _autoClaim, address _dest, uint8 _ownerFeesPct) public {
+	function Pool(uint256 _closeSeconds, uint256 _minPerUser, uint256 _maxPerUser, uint256 _maxPool, bool _autoClaim, address _dest, uint16 _ownerFeesPct) public {
 		require(_ownerFeesPct <= 1000);
 		require(_closeSeconds > 0);
   	require(_maxPool > totalEth);
@@ -115,6 +115,10 @@ contract Pool is Ownable {
 		autoClaim = _autoClaim;
 
 		emit logUpdatePool(_closeSeconds, _minPerUser, _maxPerUser, _maxPool, _autoClaim);
+  }
+
+  function getPool() view external returns(uint256, uint256, uint256, uint256, bool, address, uint16) {
+    return (closeAt, minPerUser, maxPerUser, maxPool, autoClaim, dest, ownerFeesPct);
   }
 
 	function () external payable onlyPoolOpen atState(State.Open) {

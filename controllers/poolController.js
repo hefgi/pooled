@@ -43,14 +43,26 @@ module.exports = {
     res.render('pools/new');
   },
   poolCreateTx: (req, res, next) => {
-    const { name, author } = req.query;
+    console.log('please');
+    console.log(req.query);
 
+    const { minPerUser, maxPerUser, maxPool, dest, closeAt, ownerFeesPct } = req.query;
+    
+    // TODO: Get autoclaim from HTML
+    const autoClaim = 'true';
+
+    // TODO: need to convert '0 %' to '0'
+    const realOwnerFeesPct = '0';
+
+    // TODO: Convert date to seconds from now
+    const closeSeconds = 3600 * 24 * 10
     let poolsInstance;
 
     Pools.deployed().then((instance) => {
       poolsInstance = instance;
 
-      const txParams = poolsInstance.deployPool.request(name, author).params;
+
+      const txParams = poolsInstance.deployPool.request(closeSeconds, minPerUser, maxPerUser, maxPool, autoClaim, dest, realOwnerFeesPct).params;
 
       const tx = {
         receiver: txParams[0].to,
@@ -58,6 +70,10 @@ module.exports = {
         value: 0,
         data: txParams[0].data,
       };
+
+      console.log('test');
+
+      console.log(tx);
 
       res.render('pools/new-tx', { tx, txString: javascriptStringify(tx) });
     }).catch((err) => {

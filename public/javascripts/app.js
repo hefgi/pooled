@@ -122,7 +122,9 @@ class App {
       return this;
     }
     /* eslint-enable */
-
+    console.log('text');
+    console.log(tx);
+    
     this.web3.eth.sendTransaction({
       from: this.account,
       to: txObj.receiver,
